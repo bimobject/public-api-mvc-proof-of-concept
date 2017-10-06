@@ -1,0 +1,19 @@
+﻿@model BrandVM[]
+@{
+        ViewBag.Page = Model[0].Brand.Name;
+    }
+
+<h2>@ViewBag.Page</h2>
+
+    <h3><a asp-controller="Home" asp-action="Brands">⟵ See all brands</a></h3>
+<div id="indexcontent">
+    
+    @foreach (var item in Model)
+    {
+        <div class="imagecontent">
+            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                <img src="@item.ImageUrl" alt="Avatar" class="image" style="width:100%"> <br /><h4>@item.Name</h4><br /><br />
+            </a>
+        </div>
+    }
+</div>

@@ -1,0 +1,433 @@
+﻿body {
+    font-family: 'Avenir LT Std';
+    background: #ffffff;
+}
+
+#wrapper {
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+#content {
+    padding: 30px 50px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+    /*#content img {
+        width: 10%;
+    }*/
+
+    /*#content img:hover {
+        filter: drop-shadow(3px 2px 5px #C0C0C0);
+        cursor: pointer;
+    }*/
+
+    #content span {
+        width: 300px;
+    }
+
+.menu {
+    text-align: right;
+    padding: 10px;
+}
+
+    .menu a {
+        padding: 1px 10px;
+    }
+
+.shop {
+    text-align: right;
+    margin: 0 30px;
+    font-size: 14px;
+    margin-bottom: -30px;
+}
+
+    .shop #number {
+        background: #F3F3F3;
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 5px;
+        line-height: 70%;
+        width: max-content;
+        float: right;
+    }
+
+#cart {
+    font-size: 50px;
+}
+
+.downloadinfo {
+    font-size: 13px;
+}
+
+    .downloadinfo a {
+        color: #00AEEF;
+        font-weight:bold;
+    }
+
+        .downloadinfo a:hover {
+            color: #C0C0C0;
+        }
+
+#cartWin {
+    position: absolute;
+    top: 200px;
+    background: white;
+    right: 10px;
+    width: 300px;
+    height: 400px;
+    overflow-y: scroll;
+    text-align: left;
+    padding: 20px;
+    filter: drop-shadow(3px 2px 5px #C0C0C0);
+}
+
+/* DETAIL PAGE */
+.section {
+    text-align: left;
+    width: inherit;
+}
+
+.downloadBtns {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.buybtn {
+    background: black;
+    width: 50%;
+    outline: 0;
+    overflow: hidden;
+    display: inline-block;
+    padding: 15px 16px;
+    color: white;
+    margin: 20px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .5s;
+    filter: drop-shadow(3px 2px 5px #C0C0C0);
+}
+
+    .buybtn:hover {
+        opacity: 0.3;
+        filter: drop-shadow(3px 2px 5px #333);
+    }
+
+#footer {
+    text-align: right;
+    margin: auto;
+    color: black;
+    padding-top: 30px;
+    font-size: 11px;
+    font-family: 'Avenir LT Std';
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+    #footer img {
+        vertical-align: middle;
+    }
+
+/*************************************************************************/
+/* INDEX PAGE */
+/*************************************************************************/
+#indexcontent {
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imagecontent {
+    position: relative;
+    width: 10%;
+    padding: 10px;
+    filter: drop-shadow(2px 1px 4px #C0C0C0);
+    display: inline-block;
+    color: black;
+    font-size: 13px;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.imagecontent:hover {
+    opacity: 0.5;
+}
+
+
+/*.imagecontent:hover .image{
+    opacity: 0.8;
+    filter: none;
+}
+
+
+.imagecontent:hover h4 {
+    opacity: 1;
+}*/
+
+.text {
+    color: black;
+    font-size: 13px;
+    padding: 16px 32px;
+    width: 80%;
+}
+
+.brands {
+    width: 300px;
+    vertical-align: top;
+    outline: 0;
+    overflow: hidden;
+    display: inline-block;
+    border: none;
+    padding: 8px 16px;
+    color: #000;
+    margin: 20px;
+    font-size: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    word-break: keep-all;
+    white-space: nowrap;
+    font-family: 'Chronicle Display';
+    transition: .5s;
+}
+
+
+.brandsLabels {
+    font-family: 'Avenir LT Std';
+    font-size: 14px;
+}
+
+/************************************************************************
+/* HEADERS AND LINKS */
+/*************************************************************************/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*a:hover {
+        color: #888888;
+    }*/
+
+h1, h2, h3 {
+    text-align: center;
+    font-style: normal;
+}
+
+h1, h3 {
+    font-family: 'Avenir LT Std';
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-weight: 100;
+    font-family: 'Chronicle Display';
+    font-size: 4vw;
+    margin: auto;
+    background: #F3F3F3;
+    padding: 30px;
+}
+
+h3 a:hover {
+    opacity: 0.7;
+    text-decoration: overline underline;
+}
+
+h4 {
+    height: 20px;
+    margin-top: 0;
+}
+
+.indexquote {
+    background: url(https://www.offecct.com/wp-content/uploads/2017/03/avignon_bildspel.jpg) fixed no-repeat top left;
+    font-size: 5vw;
+    color: white;
+    padding: 5% 50% 5% 5%;
+    text-align: left;
+    filter: drop-shadow(1px 2px 3px #C0C0C0);
+}
+
+.linkbtn, input[type="button"] {
+    background-color: #fff;
+    width: 200px;
+    outline: 0;
+    overflow: hidden;
+    display: inline-block;
+    border: none;
+    padding: 8px 16px;
+    color: #000;
+    margin: 20px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .5s;
+    filter: drop-shadow(3px 2px 5px #C0C0C0);
+}
+
+    .linkbtn:hover, input[type=button]:hover {
+        filter: drop-shadow(3px 2px 5px #000);
+    }
+
+input[type=text] {
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 70%;
+    height: 30px;
+    background: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png) no-repeat 99% 50%;
+    background-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Avenir LT Std';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+    input[type=text]:focus {
+        border-color: #333;
+        outline: none;
+    }
+
+.line {
+    border-top: 2px solid black;
+}
+
+
+
+/*************************************************************************/
+/* FONT FACES */
+/*************************************************************************/
+@font-face {
+    font-family: 'Chronicle Display';
+    src: url('ChronicleDisplay-Roman.eot');
+    src: url('fonts/chronicledisplay-roman.eot?#iefix') format('embedded-opentype');
+    src: url('fonts/chronicledisplay-roman.woff') format('woff');
+    src: url('fonts/chronicledisplay-roman.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('fonts/avenirltstd-light.eot');
+    src: url('fonts/avenirltstd-light.eot?#iefix') format('embedded-opentype');
+    src: url('fonts/avenirltstd-light.ttf') format('truetype');
+    src: url('fonts/avenirltstd-light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'fontawesome';
+    src: url('fonts/fontawesome-webfon.eot');
+    src: url('fonts/fontawesome-webfont.eot') format('embedded-opentype');
+    src: url('fonts/fontawesome-webfont.ttf') format('truetype');
+    src: url('fonts/fontawesome-webfont.woff') format('woff');
+}
+
+/*************************************************************************/
+/* RESPONSIVE TWEAKS */
+/*************************************************************************/
+
+@media (max-width: 1900px) {
+
+    .indexquote {
+        background: url(https://www.offecct.com/wp-content/uploads/2017/03/Bildspel-Webb-2017_4_2.jpg) fixed no-repeat center center;
+    }
+
+    .imagecontent {
+        width: 15%;
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .indexquote {
+        height: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .indexquote {
+        height: 200px;
+        background: url(https://www.offecct.com/wp-content/uploads/2017/03/Bildspel-Webb-2017_4_2.jpg) fixed no-repeat center top;
+    }
+
+    .imagecontent {
+        width: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #cart {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .indexquote {
+        background: #F3F3F3;
+        filter:none;
+        color:black;
+        height:auto;
+    }
+
+    #indexcontent {
+        padding: 0;
+    }
+
+    .imagecontent {
+        width: 40%;
+    }
+
+    .linkbtn, input[type="button"] {
+        width: 80%;
+        font-size: 14px;
+        font-family: 'Avenir LT Std', sans-serif;
+    }
+    #content img {
+        width: 80%;
+        margin:auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .imagecontent {
+        width: 80%;
+    }
+
+    .indexquote {
+        padding: 5%;
+        background-size: 1200px;
+    }
+}

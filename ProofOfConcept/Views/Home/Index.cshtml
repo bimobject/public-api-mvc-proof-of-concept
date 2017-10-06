@@ -1,0 +1,35 @@
+﻿@model IndexVM[]
+@{
+    ViewBag.Page = nameof(HomeController.Index);
+}
+
+<h2 class="indexquote">Your number one online retail store for armchairs & sofas</h2>
+
+
+<div id="indexcontent">
+
+    @{Random rnd = new Random();
+    }
+
+    @if (Model.Length > 0)
+    {
+        @for (int i = 0; i < 5; i++)
+        {
+            int x = rnd.Next(1, 100);
+
+            <div class="imagecontent">
+                <p>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@Model[x].Id">
+                        <img src="@Model[x].ImageUrl" alt="Avatar" class="image" style="width:100%"> <br /><h4>@Model[x].Name</h4>
+                    </a>
+                    <br /><br />
+                </p>
+            </div>
+        }
+
+    }
+
+
+</div>
+
+<h3><a asp-controller="Home" asp-action="Products">See all products</a></h3>

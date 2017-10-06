@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>@ViewBag.Title || @ViewBag.Page</title>
+</head>
+<body>
+        <h1><a asp-controller="Home" asp-action="Index">@ViewBag.Title</a></h1>
+        <div class="shop"><i id="cart" class="fa fa-shopping-cart" aria-hidden="true"></i> <div id="number"></div></div>
+        <h3><span class="menu"><a asp-controller="Home" asp-action="Index">Home</a> | <a asp-controller="Home" asp-action="Products">Products</a> | <a asp-controller="Home" asp-action="Brands">Brands</a> </span></h3> 
+    <div id="wrapper">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <p>
+            Powered by 
+            <img width="100px" src="~/img/logo.png" />
+        </p>
+    </div>
+        <div id="cartWin"><a style="padding:5px 10px; width:initial; position:absolute; bottom: 10px; left: 10px;" class="linkbtn" id="emptycart">Empty cart</a><a style="padding:5px 10px; width:initial; background:black; color:white; position:absolute; bottom: 10px; right: 10px;" class="linkbtn" id="emptycart">Buy</a></div>
+    <script src="~/scripts/jQuery.js"></script>
+    <script src="~/scripts/JavaScript.js"></script>
+</body>
+</html>

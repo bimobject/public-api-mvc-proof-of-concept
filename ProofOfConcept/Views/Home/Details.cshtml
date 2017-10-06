@@ -1,0 +1,67 @@
+﻿@model Tuple<DetailsVM, string>
+@{
+    ViewBag.Page = Model.Item1.Name;
+}
+
+<h2>@Model.Item1.Name</h2>
+<h3>
+    BY <br /> @*<a asp-controller="Home" asp-action="BrandsProducts" asp-route-id="@Model.Item1.Brand.Id">@Model.Item1.Brand.Name</a>*@
+    <img src="@Model.Item1.Brand.ImageUrl" />
+</h3>
+
+
+<div id="content">
+
+    @if (Model.Item1.ImageUrls != null)
+    {
+        @for (int i = 0; i < @Model.Item1.ImageUrls.Length; i++)
+        {
+            <img class="detailimg" data-lightbox="viewFullImage" src="@Model.Item1.ImageUrls[i]" />
+
+        }
+    }
+
+    @if (Model.Item1.IsAvailableWorldWide == true)
+            {
+        <h3>Available worldwide</h3>
+    }
+
+    <p>@Model.Item1.DescriptionPlainText <br /><br /></p>
+
+    @if (@Model.Item1.DescriptionPlainText == null)
+            {
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.Maecenas vel purus quis justo varius aliquet nec non eros. Nulla elementum mauris non tortor aliquet, at lobortis magna finibus.Nunc cursus, tortor vitae hendrerit euismod, augue quam faucibus ante, id feugiat augue enim pellentesque urna.Duis ut aliquet leo. Aliquam consequat consectetur sem, in porttitor nisl vestibulum non. Duis hendrerit sollicitudin luctus. Curabitur pharetra metus vel semper euismod. Integer ultricies nisi vel quam aliquam interdum.</p>
+    }
+    <br />
+    <a class="buybtn" id="buy" data-assigned-id="@Model.Item1.Id">BUY</a>
+    <h3>Specifications</h3>
+
+    <p>@Model.Item1.SpecificationHtml</p>
+    <span>
+        <b>Meassurments:</b> @Model.Item1.Width x @Model.Item1.Height x @Model.Item1.Depth
+        @if (Model.Item1.IsImperial == true)
+            {
+            <span>inch</span>
+        }
+        else
+        {
+            <span>cm</span>
+        }
+    </span>
+    <br />
+    <br />
+    <hr class="line" />
+    <br />
+    <h3>Download this object as a file</h3>
+    <p class="downloadinfo">In order to download a file you need a <a href="http://bimobject.com" target="_blank">BIMobject</a> account. If you are logged in, the download will start automatically. If you are not logged in, you will be redirected to a login page. </p>
+    <p id="downloadBtns">
+        @for (int i = 0; i < Model.Item1.Files.Length; i++)
+        {
+            <a asp-controller="Home" asp-action="GetFile"
+               asp-route-productid="@Model.Item1.Id"
+               asp-route-fileid="@Model.Item1.Files[i].Id"
+               asp-route-filename="@Model.Item1.Files[i].Name"
+               target="_blank" class="linkbtn">@Model.Item1.Files[i].FileType.Name</a>
+        }
+    </p>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProofOfConcept", "ProofOfConcept\ProofOfConcept.csproj", "{03F454FA-3A8D-41E7-851C-7F257F99D4DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F454FA-3A8D-41E7-851C-7F257F99D4DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F454FA-3A8D-41E7-851C-7F257F99D4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F454FA-3A8D-41E7-851C-7F257F99D4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F454FA-3A8D-41E7-851C-7F257F99D4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B7B3BE9-04AB-44CB-BC97-EA63E1E739F9}
+	EndGlobalSection
+EndGlobal

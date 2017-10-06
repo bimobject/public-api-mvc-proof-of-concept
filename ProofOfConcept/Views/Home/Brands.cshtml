@@ -1,0 +1,35 @@
+﻿@model BrandVM[]
+@{
+    ViewBag.Page = nameof(HomeController.Brands);
+}
+
+
+<h2>@ViewBag.Page</h2>
+<div id="indexcontent">
+
+    @{ char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray(); }
+
+
+    @for (int i = 0; i < alpha.Length; i++)
+    {
+        if (Model.Where(x => x.Name.StartsWith(alpha[i])).Count() != 0)
+        {
+            <div class="brands">
+                <p>@alpha[i]</p>
+                <hr class="line" />
+
+                @foreach (var item in Model.Where(x => x.Name.StartsWith(alpha[i])))
+                {
+                    <p>
+                        <a asp-controller="Home" asp-action="BrandsProducts" asp-route-id="@item.Id" class="brandsLabels">
+                            <img src="@item.ImageUrl" style="max-width:30%; max-height:50px;" /><br />
+                            @item.Name (@item.NumberOfProducts)
+                        </a>
+                    </p>
+                }
+            </div>
+        }
+
+    }
+
+</div>

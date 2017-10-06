@@ -1,0 +1,26 @@
+﻿@model IndexVM[]
+@{
+    ViewBag.Page = nameof(HomeController.Index);
+}
+
+<h2>All our products</h2>
+<h3>
+    Filter search<br />
+    <input type="text" id="filter" />
+</h3>
+
+<div id="indexcontent">
+
+    @foreach (var item in Model)
+    {
+        <div class="imagecontent">
+            <p>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">
+                    <img src="@item.ImageUrl" alt="Avatar" class="image" style="width:100%"> <br /><h4>@item.Name</h4>
+                </a>
+                <br /><br />
+            </p>
+        </div>
+    }
+
+</div>
