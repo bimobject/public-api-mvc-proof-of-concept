@@ -5,3 +5,5 @@
 /ProofOfConcept/.vs/*
 /ProofOfConcept/bin/*
 /ProofOfConcept/obj/*
+/.vs/config
+/.vs/ProofOfConcept/v15/sqlite3

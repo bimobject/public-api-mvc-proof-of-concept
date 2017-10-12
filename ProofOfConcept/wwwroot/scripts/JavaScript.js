@@ -70,4 +70,9 @@ $(document).ready(function () {
         $("#cartWin").slideUp(2000);
     });
     
+    $(".linkbtn").click(function (event) {
+        event.preventDefault();
+        window.open(this.href, "Download", "width=500,height=600");
+    });
+
 });
