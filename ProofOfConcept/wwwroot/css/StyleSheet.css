@@ -15,6 +15,7 @@
     text-align: center;
     width: 70%;
     margin: auto;
+    line-height: 165%;
 }
 
     /*#content img {
@@ -121,6 +122,23 @@
     .buybtn:hover {
         opacity: 0.3;
         filter: drop-shadow(3px 2px 5px #333);
+    }
+
+#about {
+    text-align: left;
+    line-height: 165%;
+    font-size: 20px;
+    padding: 30px 50px;
+    width: 70%;
+    margin: auto;
+}
+
+    #about a {
+        color: #00AEEF;
+    }
+
+    #about a:hover {
+        color:#C0C0C0;
     }
 
 #footer {

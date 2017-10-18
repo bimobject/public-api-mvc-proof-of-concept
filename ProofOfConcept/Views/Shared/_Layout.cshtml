@@ -6,12 +6,12 @@
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <title>@ViewBag.Title || @ViewBag.Page</title>
+    <title>@ViewBag.Title — @ViewBag.Page</title>
 </head>
 <body>
         <h1><a asp-controller="Home" asp-action="Index">@ViewBag.Title</a></h1>
         <div class="shop"><i id="cart" class="fa fa-shopping-cart" aria-hidden="true"></i> <div id="number"></div></div>
-        <h3><span class="menu"><a asp-controller="Home" asp-action="Index">Home</a> | <a asp-controller="Home" asp-action="Products">Products</a> | <a asp-controller="Home" asp-action="Brands">Brands</a> </span></h3> 
+        <h3><span class="menu"><a asp-controller="Home" asp-action="Index">Home</a> | <a asp-controller="Home" asp-action="Products">Products</a> | <a asp-controller="Home" asp-action="Brands">Brands</a> | <a asp-controller="Home" asp-action="About">About</a>  </span></h3> 
     <div id="wrapper">
         @RenderBody()
     </div>
