@@ -7,7 +7,7 @@ $(document).ready(function () {
     var key1 = "Key";
     var anum = 0;
 
-    
+
     // GENERATE CART
     for (var i = 0; i < localStorage.length; i++) {
         var key = key1 + anum;
@@ -69,10 +69,9 @@ $(document).ready(function () {
     $("#wrapper").click(function () {
         $("#cartWin").slideUp(2000);
     });
-    
-    $(".linkbtn").click(function (event) {
-        event.preventDefault();
-        window.open(this.href, "Download", "width=500,height=600");
-    });
 
+    //$(".linkbtn").click(function (event) {
+    //    event.preventDefault();
+    //    //var popupWindow = window.open(this.href, "GetFile", "width=400,height=600");
+    //});
 });

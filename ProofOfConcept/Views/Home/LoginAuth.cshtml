@@ -1,0 +1,6 @@
+﻿@model Tuple<string, string, string, string, string>
+
+<script>
+    window.open(new DOMParser().parseFromString("@Model.Item1&@Model.Item2&@Model.Item3&@Model.Item4&@Model.Item5", "text/html").documentElement.textContent, "GetFile", "width=400,height=500,top=0,left=20");
+    window.history.back();
+</script>

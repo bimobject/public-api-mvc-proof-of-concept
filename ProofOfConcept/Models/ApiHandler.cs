@@ -136,6 +136,26 @@ namespace ProofOfConcept.Models
         }
 
         /// <summary>
+        /// Redirects the user to login
+        /// </summary>
+        public static Tuple<string, string, string, string, string> RedirectAndDownload(string id, string productId, string fileId)
+        {
+            var clientId2 = Configuration["clientInfo:clientId2"];
+            var redirectUri = Configuration["baseUrls:redirectUri"];
+            var authUrl = Configuration["baseUrls:authUrl"];
+            //var url = $"{authUrl}?client_id={clientId2}&response_type=code&redirect_uri={redirectUri}&scope=search_api search_api_downloadbinary offline_access&state={productId}_{fileId}";
+
+            // url is divided like this because Javascript are unable to parse & properly.
+            var url1 = $"{authUrl}?client_id={clientId2}";
+            var url2 = $"response_type=code";
+            var url3 = $"redirect_uri={redirectUri}";
+            var url4 = $"scope=search_api search_api_downloadbinary offline_access";
+            var url5 = $"state ={productId}_{fileId}";
+
+            return Tuple.Create(url1, url2, url3, url4, url5);
+        }
+
+        /// <summary>
         /// Api call to get details on one product 
         /// </summary>
         private static async Task<string> GetAllProductsFromOneBrandCallApi(string token)

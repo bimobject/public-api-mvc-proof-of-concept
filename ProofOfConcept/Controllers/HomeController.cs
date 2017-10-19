@@ -55,13 +55,15 @@ namespace ProofOfConcept.Controllers
         [HttpGet]
         public async Task<IActionResult> GetFile(string productId, string fileId, string fileName)
         {
-            var clientId2 = ApiHandler.Configuration["clientInfo:clientId2"];
-            var redirectUri = ApiHandler.Configuration["baseUrls:redirectUri"];
-            var authUrl = ApiHandler.Configuration["baseUrls:authUrl"];
-
-            // Check if cookie exists - authenticate
+            //var clientId2 = ApiHandler.Configuration["clientInfo:clientId2"];
+            //var redirectUri = ApiHandler.Configuration["baseUrls:redirectUri"];
+            //var authUrl = ApiHandler.Configuration["baseUrls:authUrl"];
+            //var url = $"{authUrl}?client_id={clientId2}&response_type=code&redirect_uri={redirectUri}&scope=search_api search_api_downloadbinary offline_access&state={productId}_{fileId}";
+            
             if (Request.Cookies["access_token"] == null)
-                return Redirect($"{authUrl}?client_id={clientId2}&response_type=code&redirect_uri={redirectUri}&scope=search_api search_api_downloadbinary offline_access&state={productId}_{fileId}");
+            {
+                return RedirectToAction(nameof(LoginAuth));
+            }
 
             var token = Request.Cookies["access_token"];
             var response = await ApiHandler.GetDownloadRequest(productId, fileId, token);
@@ -87,23 +89,13 @@ namespace ProofOfConcept.Controllers
             return File(await response.Content.ReadAsByteArrayAsync(), "application/octet-stream", fileName);
         }
 
-
         [HttpGet]
-        public IActionResult Download(string code, string state)
+        public IActionResult LoginAuth(string id, string token, string productId, string fileId)
         {
-            var authResponse = ApiHandler.Authorize(code).Result;
-            var details = JObject.Parse(authResponse).ToObject<DownloadToken>();
+            var data = ApiHandler.RedirectAndDownload(id, productId, fileId);
 
-            CookieOptions options = new CookieOptions
-            {
-                Expires = DateTime.Now.AddSeconds(int.Parse(details.expires_in))
-            };
-
-            Response.Cookies.Append("access_token", details.access_token, options);
-            Response.Cookies.Append("refresh_token", details.refresh_token);
-            Response.Cookies.Append("token_type", details.token_type);
-
-            return View("Close");            
+            return View(data);
         }
+
     }
 }
