@@ -7,6 +7,7 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ProofOfConcept.Models
 {
@@ -15,6 +16,9 @@ namespace ProofOfConcept.Models
         public static IConfigurationRoot Configuration { get; set; }
         private static readonly HttpClient Client = new HttpClient();
 
+        /// <summary>
+        /// Constructor to access variables in appsettings.json
+        /// </summary>
         static ApiHandler()
         {
             var builder = new ConfigurationBuilder()
@@ -67,7 +71,9 @@ namespace ProofOfConcept.Models
             return JObject.Parse(responseString)["data"].ToObject<BrandVM[]>();
         }
 
-
+        /// <summary>
+        /// Returns Json for Brands details view (all products from one brand)
+        /// </summary>
         public static BrandVM[] GetProductsDetailsBrands(string id)
         {
             var responseString = string.Empty;
@@ -234,7 +240,6 @@ namespace ProofOfConcept.Models
 
             return payload;
         }
-
  
         /// <summary>
         /// Api call to get download binary
@@ -248,36 +253,10 @@ namespace ProofOfConcept.Models
 
             return await Client.SendAsync(request);        
         }
-
-        public static async Task<string> Authorize(string code)
-        {
-            var tokenUrl = Configuration["baseUrls:tokenUrl"];
-            var clientId2 = Configuration["clientInfo:clientId2"];
-            var clientSecret2 = Configuration["clientInfo:clientSecret2"];
-            var redirectUri = Configuration["baseUrls:redirectUri"];
-
-            var request = new HttpRequestMessage(HttpMethod.Post, tokenUrl);
-
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-
-            request.Content = new FormUrlEncodedContent(new Dictionary<string, string>
-            {
-                { "client_id", clientId2 },
-                { "client_secret", clientSecret2 },
-                { "grant_type", "authorization_code" },
-                { "code", code },
-                { "redirect_uri", redirectUri }
-            });
-
-            var response = await Client.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-
-            // object (access_token, token_type, expires_in, refresh_token) store in cookie
-            var payload = await response.Content.ReadAsStringAsync(); 
-
-            return payload;
-        }
-
+        
+        /// <summary>
+        /// Gets a refresh token
+        /// </summary>
         public static async Task<string> ReAuthorize(string refreshToken)
         {
             var tokenUrl = Configuration["baseUrls:tokenUrl"];

@@ -379,7 +379,7 @@ input[type=text] {
 @media (max-width: 1900px) {
 
     .indexquote {
-        background: url(https://www.offecct.com/wp-content/uploads/2017/03/Bildspel-Webb-2017_4_2.jpg) fixed no-repeat center center;
+        background: url(https://www.offecct.com/wp-content/uploads/2017/03/avignon_bildspel.jpg) fixed no-repeat center center;
     }
 
     .imagecontent {
@@ -397,7 +397,7 @@ input[type=text] {
 @media (max-width: 1024px) {
     .indexquote {
         height: 200px;
-        background: url(https://www.offecct.com/wp-content/uploads/2017/03/Bildspel-Webb-2017_4_2.jpg) fixed no-repeat center top;
+        background: url(https://www.offecct.com/wp-content/uploads/2017/03/avignon_bildspel.jpg) fixed no-repeat center top;
     }
 
     .imagecontent {
